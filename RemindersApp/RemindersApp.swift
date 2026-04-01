@@ -5,13 +5,15 @@
 //  Created by JidNation on 27/03/2026.
 //
 
+import CoreData
 import SwiftUI
 
 @main
-struct RemindersAppApp: App {
+struct RemindersApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environment(\.managedObjectContext, CoreDataProvider.shared.persistenceContainer.viewContext)
         }
     }
 }
